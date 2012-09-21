@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby on Rails: Welcome aboard</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+	  var timer = setInterval(function(){
+	      $('#images').append('<img src="/assets/rails.png" />');	      
+	  }, 1000);
+
+          $('#stop').click(function(){
+              clearInterval(timer);
+          });
+
+      $.ajax({
+	      type: "GET",
+	      url: "/poll/poll?length=20",
+	      success: function(data){
+		  console.log("poll: success");
+                  console.log(data);
+	      },
+	      error: function(){
+		  console.log("poll: error");
+	      },
+	      timeout: function(xhr){
+		  console.log("poll: timeout");
+	      } 
+	  });
+      });
+
+    </script>
+  </head>
+  <body>
+    <button id="stop">STOP</button>
+    <div id="images">
+    </div>
+  </body>
+</html>
