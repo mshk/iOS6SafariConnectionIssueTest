@@ -2,3 +2,8 @@
 
 This was supposed to be a test code to reproduce iOS 6 Mobile Safari concurrent connection issue, but it still has some issue and not usable yet. It would be very much appreciated if you can fix 'DOM manipulation while long polling call' issue :-)
 
+== How to run
+
+$ rail server
+
+open http://localhost:3000/
